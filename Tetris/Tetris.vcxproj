@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="OperatingBlock.cpp" />
+    <ClCompile Include="RemoveFullLine.cpp" />
     <ClCompile Include="Showing.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="OneBlock.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="FiveBlock.h" />
     <ClInclude Include="FourBlock.h" />
     <ClInclude Include="OperatingBlock.h" />
+    <ClInclude Include="RemoveFullLine.h" />
     <ClInclude Include="Showing.h" />
     <ClInclude Include="Tetris.h" />
     <ClInclude Include="OneBlock.h" />

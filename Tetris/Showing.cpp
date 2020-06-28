@@ -14,6 +14,8 @@ void Showing::ShowMap(const vector<vector<int>>& Map)
 				std::cout << "бр";
 			else if (Map[a][b] == 1 || Map[a][b] == 2)
 				std::cout << "бс";
+			else if (Map[a][b] == 3)
+				std::cout << "в├";
 		}
 		std::cout << std::endl;
 	}

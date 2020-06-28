@@ -3,12 +3,16 @@
 #include <thread>
 #include <conio.h>
 #include <Windows.h>
+#include <queue>
+
 
 
 #include "Showing.h"
 #include "OperatingBlock.h"
 #include "Block.h"
 #include "Tetris.h"
+#include "RemoveFullLine.h"
+
 #include "OneBlock.h"
 #include "TwoBlock.h"
 #include "ThreeBlock.h"
@@ -111,13 +115,16 @@ Block* ReadyToFallingBlock()
 	return Blocks;
 }
 
+
+
 int main()
 {
 	system(" mode  con lines=45   cols=60 ");
 	
-	int a = 1;
+	RemoveFullLine* RFL = new RemoveFullLine();
+
 	while (1)
-	{
+	{	
 		Block* Blocks = ReadyToFallingBlock();
 
 		OperatingBlock* OperBlock = new OperatingBlock(Blocks);
@@ -140,11 +147,12 @@ int main()
 
 		Sleep(1000);
 
+		RFL->FindAndRemoveFullLine(Map);
+
 		delete OperBlock;
 		delete Blocks;
 
-		std::cout << "Thread!" << std::endl;
-
-		++a;
 	}
+
+	delete RFL;
 }
