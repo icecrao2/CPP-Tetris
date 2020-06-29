@@ -117,11 +117,28 @@ Block* ReadyToFallingBlock()
 
 
 
+//맨 위 라인에 블럭이 하나라도 생기면 TRUE 반환
+bool IsThisGameEND()
+{
+	for (int a = 0; a < Map[0].size(); a = a + 1)
+	{
+		if (Map[0][a] == 2)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+
+
 int main()
 {
+
 	system(" mode  con lines=45   cols=60 ");
 	
 	RemoveFullLine* RFL = new RemoveFullLine();
+
 
 	while (1)
 	{	
@@ -139,6 +156,7 @@ int main()
 		std::thread t2(StartKeyboardCTRLThread, ref(Map), ref(OperBlock));
 
 		t1.join();
+
 		KeyboardCTRLThreadIsRunning = false;
 		
 		t2.join();
@@ -152,7 +170,16 @@ int main()
 		delete OperBlock;
 		delete Blocks;
 
+
+		if (IsThisGameEND())
+			break;
+
 	}
 
+	 system("cls");
+
+	std::cout << "Game Over...!" << std::endl;
+
 	delete RFL;
+
 }
