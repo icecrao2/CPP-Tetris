@@ -14,13 +14,19 @@ using namespace std;
 class Showing
 {
 private:
-	static void GoToXY(const int x, const int y);
+	static vector<int> PastXPos;
+	static vector<int> PastYPos;
 
+
+	static void GoToXY(const int x, const int y);
 	static void ShowScore();
 
 public:
-	static void ShowMap(const vector<vector<int>>& Map);
-	
+
+
+	static void ShowMap(const vector<vector<int>>& Map, const vector<int> Xpos, const vector<int> Ypos);
+	static void DeleteBlockInMap();
+	static void MakeMap(const vector<vector<int>>& Map);
 
 };
 

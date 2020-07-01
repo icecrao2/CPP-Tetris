@@ -17,7 +17,7 @@ void RemoveFullLine::DestroyTheLine(queue<int> Element, const int QueueSize, vec
 	}
 
 	system("cls");
-	Showing::ShowMap(Map);
+	Showing::MakeMap(Map);
 }
 
 
@@ -33,7 +33,7 @@ void RemoveFullLine::ExplodeTheLine(queue<int> Element, const int QueueSize, vec
 	}
 
 	system("cls");
-	Showing::ShowMap(Map);
+	Showing::MakeMap(Map);
 	Sleep(200);
 
 }
@@ -42,7 +42,6 @@ queue<int> RemoveFullLine::SearchForTheFullLine(vector<vector<int>>& Map)
 {
 	bool IsTheLineFull = true;
 	queue<int> LineLists;
-	system("cls");
 
 	for (int a = 0; a < Map.size(); a = a + 1)
 	{

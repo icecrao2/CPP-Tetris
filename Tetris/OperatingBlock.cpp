@@ -39,8 +39,8 @@ void OperatingBlock::Falling(vector<vector<int>>& Map)
 
 		//대입한 포지션을 맵에 적용한다.
 		ApplyToMap(Map);
-		system("cls");
-		Showing::ShowMap(Map);
+		//system("cls");
+		Showing::ShowMap(Map, block->PosX, block->PosY);
 
 		m1.unlock();
 
@@ -71,8 +71,8 @@ void OperatingBlock::PushLeftButton(vector<vector<int>>& Map)
 	//대입한 포지션을 맵에 적용한다.
 	ApplyToMap(Map);
 
-	system("cls");
-	Showing::ShowMap(Map);
+	//system("cls");
+	Showing::ShowMap(Map, block->PosX, block->PosY);
 
 	m1.unlock();
 }
@@ -94,8 +94,8 @@ void OperatingBlock::PushRightButton(vector<vector<int>>& Map)
 
 	//대입한 포지션을 맵에 적용한다.
 	ApplyToMap(Map);
-	system("cls");
-	Showing::ShowMap(Map);
+	//system("cls");
+	Showing::ShowMap(Map, block->PosX, block->PosY);
 
 	m1.unlock();
 }
@@ -121,8 +121,8 @@ void OperatingBlock::PushUpButton(vector<vector<int>>& Map)
 	
 	//대입한 포지션을 맵에 적용한다.
 	ApplyToMap(Map);
-	system("cls");
-	Showing::ShowMap(Map);
+	//system("cls");
+	Showing::ShowMap(Map, block->PosX, block->PosY);
 
 	m1.unlock();
 
@@ -145,8 +145,8 @@ void OperatingBlock::PushDownButton(vector<vector<int>>& Map)
 
 	//대입한 포지션을 맵에 적용한다.
 	ApplyToMap(Map);
-	system("cls");
-	Showing::ShowMap(Map);
+	//system("cls");
+	Showing::ShowMap(Map, block->PosX, block->PosY);
 
 	m1.unlock();
 }

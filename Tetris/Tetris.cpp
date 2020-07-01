@@ -142,9 +142,10 @@ int main()
 	
 	RemoveFullLine* RFL = new RemoveFullLine();
 
-	
+
 	while (1)
-	{	
+	{
+		Showing::MakeMap(Map);
 
 		Block* Blocks = ReadyToFallingBlock();
 
@@ -170,7 +171,7 @@ int main()
 		Sleep(500);
 
 		RFL->FindAndRemoveFullLine(Map);
-
+		Showing::DeleteBlockInMap();
 		delete OperBlock;
 		delete Blocks;
 
@@ -180,7 +181,7 @@ int main()
 
 	}
 
-	 system("cls");
+	system("cls");
 
 	std::cout << "Game Over...!" << std::endl;
 
