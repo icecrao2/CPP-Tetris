@@ -20,6 +20,7 @@ private:
 
 public:
 	static void ShowMap(const vector<vector<int>>& Map);
+	
 
 };
 
