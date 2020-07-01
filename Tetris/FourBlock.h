@@ -1,4 +1,7 @@
 #pragma once
+#ifndef __FOUR_BLOCK_H
+#define __FOUR_BLOCK_H
+
 #include "Block.h"
 
 #include <iostream>
@@ -95,4 +98,6 @@ public:
 	}
 
 };
+
+#endif // !__FOUR_BLOCK_H
 

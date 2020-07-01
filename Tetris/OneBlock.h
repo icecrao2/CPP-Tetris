@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef __ONE_BLOCK_H_
+#define __ONE_BLOCK_H_
+
 #include "Block.h"
 
 #include <iostream>
@@ -96,3 +100,4 @@ public:
 
 };
 
+#endif // !__ONE_BLOCK_H_

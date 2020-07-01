@@ -1,4 +1,10 @@
 #pragma once
+
+#ifndef __FIVE_BLOCK_H_
+
+#define __FIVE_BLOCK_H_
+
+
 #include "Block.h"
 
 #include <iostream>
@@ -96,3 +102,4 @@ public:
 
 };
 
+#endif // !__FIVE_BLOCK_H_

@@ -22,9 +22,12 @@
 using namespace std;
 
 
-vector<vector<int>> Map(Tetris::MAP_HEIGHT, vector<int>(Tetris::MAP_WIDTH));
+int Tetris::Score = 0;
 
 bool KeyboardCTRLThreadIsRunning = false;
+
+vector<vector<int>> Map(Tetris::MAP_HEIGHT, vector<int>(Tetris::MAP_WIDTH));
+
 
 
 enum BlockTypes
@@ -139,9 +142,10 @@ int main()
 	
 	RemoveFullLine* RFL = new RemoveFullLine();
 
-
+	
 	while (1)
 	{	
+
 		Block* Blocks = ReadyToFallingBlock();
 
 		OperatingBlock* OperBlock = new OperatingBlock(Blocks);
@@ -154,7 +158,7 @@ int main()
 
 		//키보드 입력 확인 후 값 입력하는 친구
 		std::thread t2(StartKeyboardCTRLThread, ref(Map), ref(OperBlock));
-
+		
 		t1.join();
 
 		KeyboardCTRLThreadIsRunning = false;
@@ -163,7 +167,7 @@ int main()
 		
 		OperBlock->FixBlock(Map);
 
-		Sleep(1000);
+		Sleep(500);
 
 		RFL->FindAndRemoveFullLine(Map);
 

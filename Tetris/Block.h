@@ -1,4 +1,9 @@
 #pragma once
+#ifndef __BLOCK_H_
+#define __BLOCK_H_
+
+
+
 #include <vector>
 
 using namespace std;
@@ -25,3 +30,4 @@ public:
 	friend class OperatingBlock;
 };
 
+#endif // !__BLOCK_H_

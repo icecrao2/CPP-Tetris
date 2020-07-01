@@ -1,4 +1,9 @@
 #pragma once
+
+#ifndef __TWO_BLOCK_H_
+#define __TWO_BLOCK_H_
+
+
 #include "Block.h"
 
 #include <iostream>
@@ -97,3 +102,4 @@ public:
 
 };
 
+#endif // !__TWO_BLOCK_H_

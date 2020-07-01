@@ -1,6 +1,11 @@
 #include "Showing.h"
+#include "Tetris.h"
+
+
 #include <vector>
 #include <iostream>
+#include <conio.h>
+#include <Windows.h>
 
 void Showing::ShowMap(const vector<vector<int>>& Map) 
 {
@@ -19,17 +24,22 @@ void Showing::ShowMap(const vector<vector<int>>& Map)
 		}
 		std::cout << std::endl;
 	}
-	/*
-	for(vector<int>::size_type i = 0 ; i < Map.size() ; i = i + 1)
-	{
-		for (iter = Map[i].begin() ; iter < Map[i].end() ; iter = iter + 1)
-		{
-			if (*iter == 0)
-				std::cout << "бр";
-			else if (*iter == 1)
-				std::cout << "бс";
-		}
-		std::cout << std::endl;
-	}
-	*/
+
+	ShowScore();
+}
+
+
+void Showing::ShowScore()
+{
+	GoToXY(43,0);
+	std::cout << "SCORE : " <<Tetris::GetScore() << std::endl;
+}
+
+void Showing::GoToXY(const int x, const int y)
+{
+	COORD Cur;
+	Cur.X = x;
+	Cur.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Cur);
+
 }

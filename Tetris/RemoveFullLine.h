@@ -1,4 +1,8 @@
 #pragma once
+#ifndef __REMOVE_FULL_LINE_H_
+#define __REMOVE_FULL_LINE_H_
+
+
 #include <Windows.h>
 #include <queue>
 
@@ -15,3 +19,4 @@ public:
 	void FindAndRemoveFullLine(vector<vector<int>>& Map);
 };
 
+#endif // !__REMOVE_FULL_LINE_H_

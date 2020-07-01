@@ -3,6 +3,7 @@
 
 #include "RemoveFullLine.h"
 #include "Showing.h"
+#include "Tetris.h"
 
 void RemoveFullLine::DestroyTheLine(queue<int> Element, const int QueueSize, vector<vector<int>>& Map)
 {
@@ -33,7 +34,7 @@ void RemoveFullLine::ExplodeTheLine(queue<int> Element, const int QueueSize, vec
 
 	system("cls");
 	Showing::ShowMap(Map);
-	Sleep(1000);
+	Sleep(200);
 
 }
 
@@ -69,6 +70,7 @@ void RemoveFullLine::FindAndRemoveFullLine(vector<vector<int>>& Map)
 	queue<int> LineLists = SearchForTheFullLine(Map);
 	const int SizeOfLineLists = LineLists.size();
 
+	Tetris::PlusScore(SizeOfLineLists * 100);
 
 	ExplodeTheLine(LineLists, SizeOfLineLists, Map);
 	DestroyTheLine(LineLists, SizeOfLineLists, Map);

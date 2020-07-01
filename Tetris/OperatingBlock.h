@@ -1,4 +1,10 @@
 #pragma once
+
+#ifndef __OPERATING_BLOCK_H_
+#define __OPERATING_BLOCK_H_
+ 
+
+
 #include "Block.h"
 #include <iostream>
 #include <vector>
@@ -108,3 +114,4 @@ public:
 	}
 };
 
+#endif // !__OPERATING_BLOCK_H_
