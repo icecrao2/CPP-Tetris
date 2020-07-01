@@ -28,12 +28,12 @@ void Showing::ShowMap(const vector<vector<int>>& Map)
 	*/
 
 	int* MapElement = const_cast<int*>(&Map[0][0]);
-	vector<int>* MapVectorElement = const_cast<vector<int>*>(&Map[0]);
+	//vector<int>* MapVectorElement = const_cast<vector<int>*>(&Map[0]);
 
 	for (size_t a = 0 ; a < Map.size(); a = a + 1)
 	{
-	//	MapElement = const_cast<int*>(&Map[a][0]);
-		MapElement = &(*MapVectorElement)[0] ;
+		MapElement = const_cast<int*>(&Map[a][0]);
+	//	MapElement = &(*MapVectorElement)[0] ;
 		for (size_t b = 0 ; b < Map[a].size() ; ++b)
 		{
 			if (*MapElement == 0)
@@ -45,7 +45,7 @@ void Showing::ShowMap(const vector<vector<int>>& Map)
 
 			++MapElement;
 		}
-		++MapVectorElement;
+	//	++MapVectorElement;
 		std::cout << std::endl;
 	}
 	ShowScore();
