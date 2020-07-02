@@ -40,11 +40,11 @@ void OperatingBlock::Falling(vector<vector<int>>& Map)
 		//대입한 포지션을 맵에 적용한다.
 		ApplyToMap(Map);
 		//system("cls");
-		Showing::ShowMap(Map, block->PosX, block->PosY);
+		Showing::ShowBlock(Map, block->PosX, block->PosY);
 
 		m1.unlock();
 
-		Sleep(1000);
+		Sleep(Tetris::FallingSpeed);
 
 	}
 
@@ -72,7 +72,7 @@ void OperatingBlock::PushLeftButton(vector<vector<int>>& Map)
 	ApplyToMap(Map);
 
 	//system("cls");
-	Showing::ShowMap(Map, block->PosX, block->PosY);
+	Showing::ShowBlock(Map, block->PosX, block->PosY);
 
 	m1.unlock();
 }
@@ -95,7 +95,7 @@ void OperatingBlock::PushRightButton(vector<vector<int>>& Map)
 	//대입한 포지션을 맵에 적용한다.
 	ApplyToMap(Map);
 	//system("cls");
-	Showing::ShowMap(Map, block->PosX, block->PosY);
+	Showing::ShowBlock(Map, block->PosX, block->PosY);
 
 	m1.unlock();
 }
@@ -122,7 +122,7 @@ void OperatingBlock::PushUpButton(vector<vector<int>>& Map)
 	//대입한 포지션을 맵에 적용한다.
 	ApplyToMap(Map);
 	//system("cls");
-	Showing::ShowMap(Map, block->PosX, block->PosY);
+	Showing::ShowBlock(Map, block->PosX, block->PosY);
 
 	m1.unlock();
 
@@ -146,7 +146,7 @@ void OperatingBlock::PushDownButton(vector<vector<int>>& Map)
 	//대입한 포지션을 맵에 적용한다.
 	ApplyToMap(Map);
 	//system("cls");
-	Showing::ShowMap(Map, block->PosX, block->PosY);
+	Showing::ShowBlock(Map, block->PosX, block->PosY);
 
 	m1.unlock();
 }
@@ -158,6 +158,7 @@ void OperatingBlock::FixBlock(vector<vector<int>>& Map)
 	{
 		Map[block->PosY[a]][block->PosX[a]] = 2;
 	}
+
 	m1.unlock();
 }
 

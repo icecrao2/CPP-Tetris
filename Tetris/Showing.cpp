@@ -32,7 +32,6 @@ void Showing::MakeMap(const vector<vector<int>>& Map)
 	}
 
 
-
 	ShowScore();
 	MapElement = nullptr;
 	delete MapElement;
@@ -49,7 +48,7 @@ void Showing::DeleteBlockInMap()
 	PastYPos.clear();
 }
 
-void Showing::ShowMap(const vector<vector<int>>& Map, const vector<int> Xpos, const vector<int> Ypos) 
+void Showing::ShowBlock(const vector<vector<int>>& Map, const vector<int> Xpos, const vector<int> Ypos)
 {
 	
 	for (int a = 0; a < PastXPos.size(); a = a + 1)

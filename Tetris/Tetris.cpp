@@ -22,7 +22,8 @@
 using namespace std;
 
 
-int Tetris::Score = 0;
+int Tetris::Score = 2000;
+int Tetris::FallingSpeed =1000;
 
 bool KeyboardCTRLThreadIsRunning = false;
 
@@ -133,6 +134,12 @@ bool IsThisGameEND()
 	return false;
 }
 
+//limit 200
+void UpgradeFallingSpeed()
+{
+	if(Tetris::GetScore() / 5  < 900)
+		Tetris::FallingSpeed = 1000 - Tetris::GetScore() / 2;
+}
 
 
 int main()
@@ -143,9 +150,11 @@ int main()
 	RemoveFullLine* RFL = new RemoveFullLine();
 
 
+	Showing::MakeMap(Map);
+
 	while (1)
 	{
-		Showing::MakeMap(Map);
+		UpgradeFallingSpeed();
 
 		Block* Blocks = ReadyToFallingBlock();
 
@@ -168,7 +177,7 @@ int main()
 		
 		OperBlock->FixBlock(Map);
 
-		Sleep(500);
+		Sleep(Tetris::FallingSpeed / 2);
 
 		RFL->FindAndRemoveFullLine(Map);
 		Showing::DeleteBlockInMap();

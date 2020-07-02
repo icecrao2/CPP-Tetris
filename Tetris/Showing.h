@@ -24,7 +24,7 @@ private:
 public:
 
 
-	static void ShowMap(const vector<vector<int>>& Map, const vector<int> Xpos, const vector<int> Ypos);
+	static void ShowBlock(const vector<vector<int>>& Map, const vector<int> Xpos, const vector<int> Ypos);
 	static void DeleteBlockInMap();
 	static void MakeMap(const vector<vector<int>>& Map);
 

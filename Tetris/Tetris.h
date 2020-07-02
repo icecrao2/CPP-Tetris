@@ -12,6 +12,8 @@ public:
 	static const int MAP_WIDTH = 20;
 	static const int MAP_HEIGHT = 35; 
 	static const int TotalBlockTypeNumber = 5;
+	static int FallingSpeed;
+
 
 	static void PlusScore(const int PlusScore)
 	{
