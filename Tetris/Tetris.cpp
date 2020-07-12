@@ -137,8 +137,8 @@ bool IsThisGameEND()
 //limit 200
 void UpgradeFallingSpeed()
 {
-	if(Tetris::GetScore() / 5  < 900)
-		Tetris::FallingSpeed = 1000 - Tetris::GetScore() / 2;
+	if (Tetris::GetScore() / 5 < 900)
+		Tetris::FallingSpeed = 1000 - Tetris::GetScore() / 5;
 }
 
 
